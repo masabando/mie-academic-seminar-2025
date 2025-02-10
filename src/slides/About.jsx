@@ -59,7 +59,7 @@ export function AboutLab1() {
     camera.position.set(0, 0, 0.001)
     controls.enablePan = false;
     controls.enableZoom = false;
-    const texture = load.texture("texture/lab/labPic.jpg");
+    const texture = load.texture("texture/lab/LabPic.jpg");
     texture.flipY = false;
     create.sphere({
       rotation: [0, -Math.PI / 2, Math.PI],
