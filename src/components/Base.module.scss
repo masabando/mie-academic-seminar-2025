@@ -1,0 +1,47 @@
+
+.note {
+  font-weight: bold;
+  background: linear-gradient(transparent 50%, #21ff00 50%);
+}
+
+
+.name {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.affiliation {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.partsTitle {
+  text-align: left;
+  width: 100%;
+  padding: 2rem 2rem 1rem 2rem;
+  font-size: 1.8rem;
+}
+
+.contents {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.head {
+  font-size: 1.3rem;
+  color: #215bc6;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.subHead {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+}
+

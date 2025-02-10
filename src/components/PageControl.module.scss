@@ -1,0 +1,12 @@
+.pageControl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(100, 100, 100, 1);
+  font-size: min(3rem, 46px);
+  padding: 1rem;
+  z-index: 999;
+}

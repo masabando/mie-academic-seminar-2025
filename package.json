@@ -1,5 +1,5 @@
 {
-  "name": "mie-academic-seminar",
+  "name": "mie-academic-seminar-2025",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.6.0",
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "@masabando/easy-three": "^1.2.0",
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
+    "antd": "^5.23.4",
+    "bootstrap": "^5.3.3",
+    "next": "14.2.23",
     "react": "^18",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^18",
-    "next": "14.2.23"
+    "sass": "^1.84.0"
   },
   "devDependencies": {
     "eslint": "^8",
