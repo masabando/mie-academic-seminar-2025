@@ -67,8 +67,10 @@ export default function Pose() {
 
   useEffect(() => {
     if (detectFlag) {
-      canvasRef.current.width = webcam.current.video.clientWidth;
+      console.log(webcam.current)
       canvasRef.current.height = webcam.current.video.clientHeight;
+      canvasRef.current.width = webcam.current.video.clientWidth;
+      // canvasRef.current.width = webcam.current.videoWidth / webcam.current.videoHeight * webcam.current.video.clientHeight;
       ctxRef.current = canvasRef.current.getContext("2d");
       drawingUtils.current = new DrawingUtils(ctxRef.current);
       loop();
@@ -100,17 +102,18 @@ export default function Pose() {
           <option value="environment">リアカメラ</option>
         </Form.Select>
       </div>
-      <div className="text-center">
+      <div>
         <div
-          className="position-relative d-inline-block"
+          className="position-relative mx-auto"
           style={{
             maxWidth: "80%",
           }}
         >
           <Webcam
             style={{
-              width: "100%",
-              maxWidth: "26rem",
+              // width: "100%",
+              // maxWidth: "26rem",
+              height: "100%",
               maxHeight: "20rem",
             }}
             audio={false}
@@ -128,8 +131,7 @@ export default function Pose() {
           <canvas
             className="position-absolute top-0 start-0"
             style={{
-              width: "100%",
-              maxWidth: "26rem",
+              height: "100%",
               maxHeight: "20rem",
             }}
             ref={canvasRef}
