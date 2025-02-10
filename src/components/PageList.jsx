@@ -4,7 +4,8 @@ import Title from "@/slides/Title";
 import { About1, About2, AboutLab1, AboutLab2 } from "@/slides/About";
 import Intro from "@/slides/3D/Intro";
 // import Sample from "@/slides/3D/Sample";
-import Fin from "@/slides/Fin";
+// import Fin from "@/slides/Fin";
+import VRMPose from "@/slides/VRMPose";
 import KtcWeb from "@/slides/3D/KtcWeb";
 import Web from "@/slides/3D/Web";
 import Responsive from "@/slides/3D/Responsive";
@@ -44,6 +45,7 @@ const PageList = [
   { title: "Webアプリケーション", slide: <WebApp />, reload: true },
   { title: "リアルな3D表現", slide: <Real />, reload: true },
   { title: "姿勢推定", slide: <Pose />, reload: true },
+  { title: "VRMと姿勢推定", slide: <VRMPose />, reload: true },
   { title: "Webページを作る技術1", slide: <Web08 /> },
   { title: "Webページを作る技術2", slide: <Web09 /> },
   { title: "Webページのこれから", slide: <Future />, reload: true },
