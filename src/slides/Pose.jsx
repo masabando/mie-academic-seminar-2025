@@ -107,7 +107,8 @@ export default function Pose() {
           <Webcam
             style={{
               width: "100%",
-              maxWidth: "800px",
+              maxWidth: "26rem",
+              maxHeight: "20rem",
             }}
             audio={false}
             ref={webcam}
