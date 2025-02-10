@@ -101,9 +101,12 @@ export default function Pose() {
         </Form.Select>
       </div>
       <div className="text-center">
-        <div className="position-relative d-inline-block" style={{
-          maxWidth: "80%",
-        }}>
+        <div
+          className="position-relative d-inline-block"
+          style={{
+            maxWidth: "80%",
+          }}
+        >
           <Webcam
             style={{
               width: "100%",
@@ -122,7 +125,15 @@ export default function Pose() {
               setCameraOK(true);
             }}
           />
-          <canvas className="position-absolute top-0 start-0" ref={canvasRef} />
+          <canvas
+            className="position-absolute top-0 start-0"
+            style={{
+              width: "100%",
+              maxWidth: "26rem",
+              maxHeight: "20rem",
+            }}
+            ref={canvasRef}
+          />
         </div>
       </div>
     </Slide>
