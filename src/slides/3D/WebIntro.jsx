@@ -1,3 +1,4 @@
+"use client"
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, OrbitControls, Float } from "@react-three/drei";
 import { useState } from "react";

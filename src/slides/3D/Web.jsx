@@ -6,11 +6,12 @@ import {
   Center,
   OrbitControls,
   ContactShadows,
-  useDepthBuffer,
+  // useDepthBuffer,
 } from "@react-three/drei";
+import Inter_Bold from "@/assets/Inter_Bold.json";
 
 function IntroMain() {
-  const depthBuffer = useDepthBuffer();
+  // const depthBuffer = useDepthBuffer();
   const leftLightRef = useRef();
   const rightLightRef = useRef();
   useFrame(() => {
@@ -31,7 +32,7 @@ function IntroMain() {
     <>
       <SpotLight
         ref={rightLightRef}
-        depthBuffer={depthBuffer}
+        // depthBuffer={depthBuffer}
         penumbra={1}
         distance={6}
         angle={0.35}
@@ -43,7 +44,7 @@ function IntroMain() {
       />
       <SpotLight
         ref={leftLightRef}
-        depthBuffer={depthBuffer}
+        // depthBuffer={depthBuffer}
         penumbra={1}
         distance={6}
         angle={0.35}
@@ -57,7 +58,8 @@ function IntroMain() {
         <Text3D
           letterSpacing={-0.06}
           size={1}
-          font="Inter_Bold.json"
+          // font="Inter_Bold.json"
+          font={Inter_Bold}
           curveSegments={32}
           castShadow
           receiveShadow

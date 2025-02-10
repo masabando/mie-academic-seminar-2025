@@ -1,5 +1,5 @@
 "use client";
-import { Slide, Name, Affiliation } from "@/components/Base.jsx";
+import { Slide } from "@/components/Base.jsx";
 
 export default function Title() {
   return (

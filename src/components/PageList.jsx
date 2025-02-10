@@ -3,14 +3,22 @@
 import Title from "@/slides/Title";
 import { About1, About2, AboutLab1, AboutLab2 } from "@/slides/About";
 import Intro from "@/slides/3D/Intro";
-import Sample from "@/slides/3D/Sample";
+// import Sample from "@/slides/3D/Sample";
 import Fin from "@/slides/Fin";
 import KtcWeb from "@/slides/3D/KtcWeb";
 import Web from "@/slides/3D/Web";
+import Responsive from "@/slides/3D/Responsive";
+import WebApp from "@/slides/3D/WebApp";
+import Real from "@/slides/3D/Real";
+import Pose from "@/slides/Pose";
+import Future from "@/slides/3D/Future";
+import Epilogue from "@/slides/3D/Epilogue";
+import { Web01, Web02, Web03, Web04, Web05, Web06, Web07, Web08, Web09 } from "@/slides/Web";
 import { WebIntro01, WebIntro02, WebIntro03, WebIntro04 } from "@/slides/3D/WebIntro";
 import { MenuOutlined, QrcodeOutlined, CopyOutlined } from "@ant-design/icons";
-import { Drawer, Input, Menu, Modal, QRCode } from "antd";
-import { useState } from "react";
+import { Drawer, Input, Menu, Modal, Popover, QRCode } from "antd";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
 const PageList = [
   { title: "タイトル", slide: <Title /> },
@@ -25,13 +33,31 @@ const PageList = [
   { title: "人類最初の自動車", slide: <WebIntro02 />, reload: false },
   { title: "1990年12月20日", slide: <WebIntro03 />, reload: false },
   { title: "人類最初のWebページ", slide: <WebIntro04 />, reload: false },
-  { title: "Sample", slide: <Sample triggerTime={30} />, reload: true },
-  { title: "最後に", slide: <Fin /> },
+  { title: "Webページの歴史", slide: <Web01 /> },
+  { title: "Webページ誕生「前」", slide: <Web02 /> },
+  { title: "Webページ誕生「後」", slide: <Web03 /> },
+  { title: "Google検索結果もリンク", slide: <Web04 /> },
+  { title: "リンクによる体験", slide: <Web05 /> },
+  { title: "スマホの誕生", slide: <Web06 /> },
+  { title: "スマホとレスポンシブデザイン", slide: <Web07 /> },
+  { title: "レスポンシブデザインの例", slide: <Responsive />, reload: true },
+  { title: "Webアプリケーション", slide: <WebApp />, reload: true },
+  { title: "リアルな3D表現", slide: <Real />, reload: true },
+  { title: "姿勢推定", slide: <Pose />, reload: true },
+  { title: "Webページを作る技術1", slide: <Web08 /> },
+  { title: "Webページを作る技術2", slide: <Web09 /> },
+  { title: "Webページのこれから", slide: <Future />, reload: true },
+  { title: "最後に", slide: <Epilogue />, reload: true },
 ];
 
 export function PageListMenu({ setPageIndex, pageIndex, controlsShow }) {
+  const params = useParams();
   const [open, setOpen] = useState(false);
   const [openQr, setOpenQr] = useState(false);
+  const [url, setUrl] = useState("");
+  useEffect(() => {
+    setUrl(window.location.href);
+  }, [params]);
   if (!controlsShow) {
     return null;
   }
@@ -66,16 +92,21 @@ export function PageListMenu({ setPageIndex, pageIndex, controlsShow }) {
         footer={null}
       >
         <div className="d-flex justify-content-center align-items-center flex-column my-5 gap-3">
-          <QRCode value={window.location.href} />
+          <QRCode value={url} />
           <Input
-            value={window.location.href}
+            value={url}
             readOnly
             addonAfter={
-              <CopyOutlined
-                onClick={() => {
-                  navigator.clipboard.writeText(window.location.href);
-                }}
-              />
+              <Popover
+                content="Copy"
+                trigger="click"
+              >
+                <CopyOutlined
+                  onClick={() => {
+                    navigator.clipboard.writeText(url);
+                  }}
+                />
+              </Popover>
             }
           />
         </div>

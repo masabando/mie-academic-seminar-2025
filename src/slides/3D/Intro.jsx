@@ -1,7 +1,8 @@
 "use client";
 import { init } from "@masabando/easy-three";
 import { Water } from "three/addons/objects/Water.js";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Loading from "@/components/Loading";
 
 function randomPosition(range, padding) {
   const r = Math.random() * range + padding;
@@ -16,6 +17,7 @@ function randomPosition(range, padding) {
 
 export default function Slide({ triggerTime = 30 }) {
   const ref = useRef();
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const { animate, create, camera, controls, load, scene, THREE, destroy } =
       init(ref.current);
@@ -160,7 +162,7 @@ export default function Slide({ triggerTime = 30 }) {
                 c.position[a] =
                   c.userData.basePosition[a] +
                   c.userData.h *
-                    Math.sin(c.userData.v[a] * time + c.userData.phase);
+                  Math.sin(c.userData.v[a] * time + c.userData.phase);
                 c.rotation[a] += c.userData.rotation[a] * delta;
               });
             });
@@ -173,5 +175,6 @@ export default function Slide({ triggerTime = 30 }) {
     };
   }, []);
 
-  return <div ref={ref} style={{ width: "100%", height: "100%" }} />;
+  return loading ? (<Loading />) :
+    (<div ref={ref} style={{ width: "100%", height: "100%" }} />);
 }

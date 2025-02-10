@@ -23,9 +23,11 @@ export default function PageControl({
   function pageKeyChange(e) {
     switch (e.key) {
       case "ArrowLeft":
+      case "PageUp":
         setPageIndex((prev) => Math.max(prev - 1, 0));
         break;
       case "ArrowRight":
+      case "PageDown":
       case "Enter":
       case " ":
         setPageIndex((prev) => Math.min(prev + 1, maxPageIndex));
