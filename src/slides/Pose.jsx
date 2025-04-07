@@ -80,12 +80,17 @@ export default function Pose() {
 
   return (
     <Slide simple>
-      <div className="py-2 d-flex align-items-center gap-2">
+      <div
+        className="pt-0 pb-2 d-flex align-items-center gap-2"
+      >
         <Button
           className="ms-3"
           onClick={() => setDetectFlag(true)}
           disabled={!(cameraOK && settingOK)}
           size="sm"
+          style={{
+            fontSize: "0.6rem",
+          }}
         >
           姿勢検出を開始
         </Button>
@@ -95,7 +100,8 @@ export default function Pose() {
           disabled={detectFlag}
           onChange={(e) => setCameraMode(e.target.value)}
           style={{
-            width: "12rem",
+            width: "9rem",
+            fontSize: "0.6rem",
           }}
         >
           <option value="user">フロントカメラ</option>
@@ -114,7 +120,7 @@ export default function Pose() {
               // width: "100%",
               // maxWidth: "26rem",
               height: "100%",
-              maxHeight: "20rem",
+              maxHeight: "16rem",
             }}
             audio={false}
             ref={webcam}

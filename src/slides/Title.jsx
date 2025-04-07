@@ -14,9 +14,7 @@ export default function Title() {
           textShadow: "0 0 0.5rem rgba(255, 255, 255, 0.8)",
         }}
       >
-        Web技術の進歩がもたらす
-        <br />
-        変化と可能性
+        Webがほどく境界の<br />先にあるもの
       </h1>
       <Name className="mt-5">坂東 将光</Name>
       <Affiliation className="mt-3 text-center">

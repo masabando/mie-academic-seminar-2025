@@ -5,6 +5,9 @@ const nextConfig = {
   distDir: "docs",
   trailingSlash: true,
   reactStrictMode: false,
+  images: {
+    unoptimized: true,
+  }
 };
 
 export default nextConfig;

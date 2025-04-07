@@ -14,7 +14,7 @@ import Real from "@/slides/3D/Real";
 import Pose from "@/slides/Pose";
 import Future from "@/slides/3D/Future";
 import Epilogue from "@/slides/3D/Epilogue";
-import { Web01, Web02, Web03, Web04, Web05, Web06, Web07, Web08, Web09 } from "@/slides/Web";
+import { Web01, Web02, Web03, Web04, Web05, Web06, Web07, Web08, Web09, Web01_95, Web01_05, Web01_15 } from "@/slides/Web";
 import { WebIntro01, WebIntro02, WebIntro03, WebIntro04 } from "@/slides/3D/WebIntro";
 import { MenuOutlined, QrcodeOutlined, CopyOutlined } from "@ant-design/icons";
 import { Drawer, Input, Menu, Modal, Popover, QRCode } from "antd";
@@ -34,11 +34,14 @@ const PageList = [
   { title: "人類最初の自動車", slide: <WebIntro02 />, reload: false },
   { title: "1990年12月20日", slide: <WebIntro03 />, reload: false },
   { title: "人類最初のWebページ", slide: <WebIntro04 />, reload: false },
-  { title: "Webページの歴史", slide: <Web01 /> },
+  { title: "Webページの歴史 - 幼少期編", slide: <Web01 /> },
   { title: "Webページ誕生「前」", slide: <Web02 /> },
   { title: "Webページ誕生「後」", slide: <Web03 /> },
   { title: "Google検索結果もリンク", slide: <Web04 /> },
+  { title: "Webページの歴史 - 思春期編", slide: <Web01_95 /> },
+  { title: "Webページの歴史 - 社会人デビュー編", slide: <Web01_05 /> },
   { title: "リンクによる体験", slide: <Web05 /> },
+  { title: "Webページの歴史 - 成熟期編", slide: <Web01_15 /> },
   { title: "スマホの誕生", slide: <Web06 /> },
   { title: "スマホとレスポンシブデザイン", slide: <Web07 /> },
   { title: "レスポンシブデザインの例", slide: <Responsive />, reload: true },

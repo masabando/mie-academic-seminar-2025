@@ -8,28 +8,27 @@ export function About1() {
     <Slide title="自己紹介">
       <Contents>
         <h2 className="text-center">坂東 将光</h2>
-        <div className="mt-4">
-          近畿大学工業高等専門学校
-          <br />
-          総合システム工学科 制御情報コース 准教授
-          <div style={{ fontSize: "0.83em" }}>
-            教務主事補 / 入試主事補 / 企画広報主事補 /
-            情報処理教育センター長補佐
-          </div>
+        <div style={{ fontSize: "0.83em" }}>
+          近畿大学工業高等専門学校 　 総合システム工学科 制御情報コース 准教授
         </div>
-        <Head className="mt-4">Web</Head>
-        <div className="mt-1 ps-4">
+        <div className="mt-2" style={{ fontSize: "0.69em" }}>
+          地域連携テクノセンター長補佐 / 情報処理教育センター長補佐
+          <br />
+          企画広報主事補 / 入試主事補 / 技術教育部長補佐(プロコン) / IR推進室
+          DX推進担当(広報担当)
+        </div>
+        <Head className="mt-1">Web</Head>
+        <div className="ps-4">
           デザイン、3D、Webアプリケーション、インタラクション
         </div>
-        <Head className="mt-3">量子コンピュータ</Head>
-        <div className="mt-1 ps-4">
+        <Head className="mt-1">量子コンピュータ</Head>
+        <div className="ps-4">
           量子ビット操作のエラー耐性、幾何学的位相による量子計算
         </div>
       </Contents>
     </Slide>
   );
 }
-
 
 export function About2() {
   return (
@@ -54,9 +53,11 @@ export function About2() {
 export function AboutLab1() {
   const ref = useRef();
   useEffect(() => {
-    const { load, camera, create, controls, animate, destroy, THREE } = init(ref.current);
+    const { load, camera, create, controls, animate, destroy, THREE } = init(
+      ref.current
+    );
     controls.connect();
-    camera.position.set(0, 0, 0.001)
+    camera.position.set(0, 0, 0.001);
     controls.enablePan = false;
     controls.enableZoom = false;
     const texture = load.texture("texture/lab/LabPic.jpg");
@@ -69,28 +70,31 @@ export function AboutLab1() {
         side: THREE.BackSide,
       },
     });
-    animate()
+    animate();
     return () => {
       destroy();
     };
   }, []);
   return (
     <Slide title="研究室紹介">
-      <div style={{
-        width: "100%",
-        height: "100%",
-      }} ref={ref}></div>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+        ref={ref}
+      ></div>
     </Slide>
   );
 }
 
 export function AboutLab2() {
   return (
-    <Slide title="研究室紹介">
+    <Slide title="研究室紹介 (昨年度の卒業研究)">
       <Contents>
-        <h2 className="text-center">今年度の卒業研究</h2>
-        <div className="mt-4">
-          <ul style={{ fontSize: "0.9rem" }}>
+        {/* <h2 className="text-center">今年度の卒業研究</h2> */}
+        <div className="mt-1">
+          <ul style={{ fontSize: "0.85rem" }}>
             <li>
               深度推定とフラクタル次元を用いた<Note>デザイン評価手法</Note>
               の検討
@@ -104,9 +108,7 @@ export function AboutLab2() {
               <Note>プロジェクターと黒板の融合</Note>
               による新しい授業支援システムの開発
             </li>
-            <li>
-              プロジェクターを用いた次世代授業支援システムの開発
-            </li>
+            <li>プロジェクターを用いた次世代授業支援システムの開発</li>
             <li>
               バスケットボールのシュート精度向上を目的としたリアルタイムフィードバックシステムの開発
             </li>
@@ -122,4 +124,3 @@ export function AboutLab2() {
     </Slide>
   );
 }
-

@@ -58,6 +58,8 @@ export function Slide({
       bgStyle.backgroundColor = bg;
     } else {
       bgStyle.backgroundImage = `url(${bg})`;
+      bgStyle.backgroundPosition = "center";
+      bgStyle.backgroundSize = "cover";
     }
   }
   return (

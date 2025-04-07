@@ -11,11 +11,12 @@ import {
   SiVuedotjs,
 } from "react-icons/si";
 
+
 export function Web01() {
   return (
-    <Slide title="Webページの歴史">
+    <Slide title="Webページの歴史 - 幼少期編">
       <Contents>
-        1990年代初頭に <Note>静的なテキストページ</Note> が誕生
+        1990年12月20日、スイスのジュネーブ郊外(CERN)で生まれる。
         <ul className="mt-4">
           <li>
             シンプルなテキスト
@@ -24,11 +25,119 @@ export function Web01() {
             リンク (相互作用)
           </li>
         </ul>
-        Google検索、Wikipedia、近大高専のWebサイト
+        まだ <Note>静的なテキストページ</Note> であり、<br />
+        情報をただ表示するだけの赤子であった。
       </Contents>
+      <img
+        src="img/baby.png" alt="赤子"
+        style={{
+          position: "absolute",
+          bottom: "0",
+          right: "0",
+          width: "10rem",
+        }}
+      />
     </Slide>
   )
 }
+
+
+export function Web01_95() {
+  return (
+    <Slide title="Webページの歴史 - 思春期編">
+      <Contents>
+        <div>
+          1995年頃〜2005年頃 (5歳〜15歳)
+        </div>
+        <div className="mt-4">JavaScriptによって、少しずつ <Note>動きを持ち始める</Note> 。</div>
+        <div className="mt-2">
+          CSSによって、<Note>ファッション (デザイン) が洗練</Note> される。
+        </div>
+        <div className="mt-2">
+          Ajax(非同期処理)でさらに <Note>インタラクティブ</Note> になる。
+        </div>
+      </Contents>
+      <img
+        src="img/student.png"
+        alt="思春期"
+        style={{
+          position: "absolute",
+          bottom: "0",
+          right: "0",
+          width: "10rem",
+        }}
+      />
+    </Slide>
+  );
+}
+
+
+export function Web01_05() {
+  return (
+    <Slide title="Webページの歴史 - 社会人デビュー編">
+      <Contents>
+        <div>2005年頃〜2015年頃 (15歳〜25歳)</div>
+        <div className="mt-4">
+          SNSやブログが普及し、<Note>情報の共有</Note> が進む。
+        </div>
+        <div className="mt-2">
+          「一部の人が書いて、多くの人が読む」から、<br />
+          <Note>「多くの人が書いて、多くの人が読む」</Note> へ。
+        </div>
+        <div className="mt-2">
+          政府や企業にも頼られ、<br />
+          <Note>重要な社会的役割 (情報発信)</Note> を担う。
+        </div>
+      </Contents>
+      <img
+        src="img/businessman.png"
+        alt="社会人デビュー"
+        style={{
+          position: "absolute",
+          bottom: "0",
+          right: "0",
+          width: "10rem",
+        }}
+      />
+    </Slide>
+  );
+}
+
+
+export function Web01_15() {
+  return (
+    <Slide title="Webページの歴史 - 成熟期編">
+      <Contents>
+        <div>2015年頃〜現在 (25歳〜)</div>
+        <div className="mt-4">
+          モバイルファーストの時代、<Note>スマホでの閲覧が主流</Note> 。
+        </div>
+        <div className="mt-2">
+          AIで <Note>パーソナライズ</Note> された情報が提供される。
+        </div>
+        <div className="mt-2">
+          Webアプリケーションが普及し、
+          <br />
+          <Note>デスクトップアプリを置き換える</Note>。
+        </div>
+        <div className="mt-2">
+          33歳となった今、より重要な社会基盤へと <Note>成長</Note> 。
+        </div>
+      </Contents>
+      <img
+        src="img/now.png"
+        alt="成熟期"
+        style={{
+          position: "absolute",
+          bottom: "0",
+          right: "0",
+          width: "10rem",
+        }}
+      />
+    </Slide>
+  );
+}
+
 
 export function Web02() {
   return (
@@ -37,7 +146,7 @@ export function Web02() {
         <img
           src="img/web0_old-Df4g13Ww.png"
           alt="Webページ誕生「前」"
-          style={{ width: "100%" }}
+          style={{ width: "90%" }}
         />
       </Contents>
     </Slide>
@@ -52,7 +161,7 @@ export function Web03() {
         <img
           src="img/web0_new-cjc1pZIr.png"
           alt="Webページ誕生「後」"
-          style={{ width: "80%" }}
+          style={{ width: "70%" }}
         />
       </Contents>
     </Slide>
@@ -189,19 +298,19 @@ export function Web09() {
       <Contents>
         <Head>フロントエンドUIライブラリ</Head>
         <div
-          className="d-flex justify-content-around mt-2"
+          className="d-flex justify-content-around mt-0"
           style={{
-            fontSize: "130%",
+            fontSize: "120%",
           }}
         >
           <Box name="React" icon={<SiReact />} highlight />
           <Box name="Vue" icon={<SiVuedotjs />} />
         </div>
-        <Head className="mt-4">フレームワーク</Head>
+        <Head className="mt-2">フレームワーク</Head>
         <div
-          className="d-flex justify-content-around mt-2"
+          className="d-flex justify-content-around mt-0"
           style={{
-            fontSize: "130%",
+            fontSize: "120%",
           }}
         >
           <Box name="Next.js" icon={<SiNextdotjs />} highlight />
