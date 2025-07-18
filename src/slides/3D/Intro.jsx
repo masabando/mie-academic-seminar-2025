@@ -85,7 +85,7 @@ export default function Slide({ triggerTime = 30 }) {
         size: 0.1,
         rounded: true,
         radius: 0.02,
-        segments: 4,
+        segments: 64,
         option: { color: 0xff6666 },
         autoAdd: false,
       }),
@@ -173,6 +173,7 @@ export default function Slide({ triggerTime = 30 }) {
     return () => {
       destroy();
     };
+    // eslint-disable-next-line
   }, []);
 
   return loading ? (<Loading />) :

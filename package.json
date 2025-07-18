@@ -12,8 +12,9 @@
   "dependencies": {
     "@ant-design/icons": "^5.6.0",
     "@ant-design/nextjs-registry": "^1.0.2",
-    "@masabando/easy-three": "^1.2.0",
+    "@masabando/easy-three": "^1.9.6",
     "@mediapipe/tasks-vision": "^0.10.21",
+    "@pixiv/three-vrm-animation": "^3.3.0",
     "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "^8.17.14",
     "@react-three/postprocessing": "^2.19.1",

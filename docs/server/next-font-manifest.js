@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Volumes/T7/GitHub/mie-academic-seminar-2025/src/app/layout\":[\"static/media/6c1d3e1a02c4bd06-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Volumes/T7/GitHub/mie-academic-seminar-2025/src/app/layout\":[\"static/media/f2dba9fbcf2f771b-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

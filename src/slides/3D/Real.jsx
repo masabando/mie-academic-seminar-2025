@@ -180,6 +180,7 @@ export default function Real() {
           shadow-camera-right={10}
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
+          shadow-bias={-0.001}
         />
         {/* <pointLight
           position={[2, 3, 0]}
