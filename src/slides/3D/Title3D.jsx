@@ -136,9 +136,10 @@ export default function Page() {
     let model;
     load
       .vrm("/mie-academic-seminar-2025/character/ktc-uniform_female_v5.vrm", {
-        position: [0, -0.7, 2],
-        rotation: [0, Math.PI, 0],
-        bvh: "/mie-academic-seminar-2025/motion/motion_mm11.bvh",
+        //position: [0, -0.7, 2],
+        position: [0.4, -0.7, 1.6],
+        rotation: [0, Math.PI*0.9, 0],
+        bvh: "/mie-academic-seminar-2025/motion/motion_mm04.bvh",
       })
       .then((vrm) => {
         model = vrm;
@@ -146,6 +147,9 @@ export default function Page() {
 
     animate(({ delta }) => {
       if (model && room) {
+        if (loading) {
+          setLoading(false);
+        }
         model.updateWithAnimation(delta);
       }
     });

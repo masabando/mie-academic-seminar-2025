@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <head>
         <meta name="theme-color" content="#000000" />
-        <title>Web技術の進歩がもたらす変化と可能性</title>
+        <title>Webがほどく境界の先にあるもの</title>
       </head>
       <body className={noto.className}>
         <AntdRegistry>
