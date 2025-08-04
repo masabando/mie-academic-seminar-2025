@@ -41,6 +41,7 @@ export function Slide({
   children,
   className = "",
   bg,
+  bgSize = "cover",
   filter = "none",
   filterColor = "none",
   title = "",
@@ -59,7 +60,7 @@ export function Slide({
     } else {
       bgStyle.backgroundImage = `url(${bg})`;
       bgStyle.backgroundPosition = "center";
-      bgStyle.backgroundSize = "cover";
+      bgStyle.backgroundSize = bgSize;
     }
   }
   return (

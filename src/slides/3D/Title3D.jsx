@@ -2,15 +2,27 @@
 import { init } from "@masabando/easy-three";
 import { useEffect, useRef, useState } from "react";
 import Loading from "@/components/Loading";
+import { Button } from "antd";
 
 export default function Page() {
   const ref = useRef();
   const [loading, setLoading] = useState(true);
+  const audioContext = useRef(null);
+  const model = useRef(null);
+  const source = useRef(null);
+  const [modelLoaded, setModelLoaded] = useState(false);
+  const [arrayBuffer, setArrayBuffer] = useState(null);
+  const isPlaying = useRef(false);
+  const [isPlayingForButton, setIsPlayingForButton] = useState(false);
+  const isPause = useRef(false);
+  const _load = useRef(null);
 
   useEffect(() => {
     const { animate, create, camera, controls, load, destroy } = init(
       ref.current
     );
+
+    _load.current = load;
 
     controls.connect();
     controls.minPolarAngle = Math.PI * 0.4;
@@ -133,34 +145,99 @@ export default function Page() {
       ],
     });
 
-    let model;
+
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    fetch("/mie-academic-seminar-2025/motion/top/rec.mp3")
+      .then((response) => {
+        return response.arrayBuffer();
+      }).then((audio) => {
+        setArrayBuffer(audio);
+      })
+
+
+
     load
       .vrm("/mie-academic-seminar-2025/character/ktc-uniform_female_v5.vrm", {
-        //position: [0, -0.7, 2],
-        position: [0.4, -0.7, 1.6],
-        rotation: [0, Math.PI*0.9, 0],
-        bvh: "/mie-academic-seminar-2025/motion/motion_mm04.bvh",
+        // position: [0.4, -0.7, 1.6],
+        // rotation: [0, Math.PI * 0.9, 0],
+        // bvh: "/mie-academic-seminar-2025/motion/top/top.bvh",
+        position: [3.1, -0.55, -2.5],
+        rotation: [0, Math.PI * 0.6, 0],
+        bvh: "/mie-academic-seminar-2025/motion/motion_mm06.bvh",
       })
       .then((vrm) => {
-        model = vrm;
+        model.current = vrm;
+        setModelLoaded(true);
       });
 
-    animate(({ delta }) => {
-      if (model && room) {
+    animate(({ delta, time }) => {
+      if (model.current && room) {
         if (loading) {
           setLoading(false);
         }
-        model.updateWithAnimation(delta);
+        if (isPlaying.current) {
+          model.current.expressionManager.setValue("aa", Math.sin(time * 10) * 0.5 + 0.5);
+          model.current.updateWithAnimation(delta);
+        } else {
+          model.current.updateWithAnimation(isPause.current ? 0 : delta);
+        }
       }
     });
     return () => {
+      source.current.stop();
+      isPlaying.current = false;
+      setIsPlayingForButton(false);
       destroy();
     };
+    // eslint-disable-next-line
   }, []);
 
   return loading ? (
     <Loading />
   ) : (
-    <div ref={ref} style={{ width: "100%", height: "100%" }} />
+    <>
+      <audio src="./motion/top/rec.mp3"></audio>
+      <Button
+        type="primary"
+        size="large"
+        style={{
+          position: "fixed",
+          bottom: "1rem",
+          left: "30vw",
+          zIndex: 9999,
+        }}
+        disabled={!modelLoaded || !arrayBuffer}
+        onClick={() => {
+          if (isPlaying.current) {
+            source.current.stop();
+            isPlaying.current = false;
+            setIsPlayingForButton(false);
+            isPause.current = true;
+          } else {
+            isPause.current = false;
+            _load.current.bvh2("/mie-academic-seminar-2025/motion/top/top.bvh", model.current).then((_bvhObj) => {
+              model.current.scene.position.set(0.4, -0.7, 1.6)
+              model.current.scene.rotation.set(0, Math.PI * 0.9, 0);
+              model.current.mixer = _bvhObj.mixer;
+              model.current.duration = _bvhObj.duration;
+              model.current.mixer.setTime(1.0 / 60 / 1000);
+              audioContext.current = new AudioContext();
+              source.current = audioContext.current.createBufferSource();
+              source.current.connect(audioContext.current.destination);
+              audioContext.current.decodeAudioData(arrayBuffer).then((buffer) => {
+                source.current.buffer = buffer;
+                source.current.start();
+                model.current.mixer.setTime(1.0 / 60 / 1000);
+                isPlaying.current = true;
+                setIsPlayingForButton(true);
+              })
+            })
+          }
+        }}
+      >
+        {isPlayingForButton ? "停止" : "自己紹介を再生"}
+      </Button>
+      <div ref={ref} style={{ width: "100%", height: "100%" }} />
+    </>
   );
 }

@@ -1,0 +1,12 @@
+.bgBlack {
+  animation: bgBlack 2s ease-in 3s forwards;
+
+  @keyframes bgBlack {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

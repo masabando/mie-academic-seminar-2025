@@ -1,6 +1,7 @@
 "use client";
 
 // import Title from "@/slides/Title";
+import Init from "@/slides/Init";
 import Title3D from "@/slides/3D/Title3D";
 import { About1, About2, AboutLab1, AboutLab2 } from "@/slides/About";
 import Intro from "@/slides/3D/Intro";
@@ -23,6 +24,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
 const PageList = [
+  { title: "Cover", slide: <Init /> },
   { title: "タイトル", slide: <Title3D /> },
   // { title: "タイトル", slide: <Title /> },
   { title: "Introduction", slide: <Intro />, reload: true },
