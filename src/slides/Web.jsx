@@ -121,7 +121,7 @@ export function Web01_15() {
           <Note>デスクトップアプリを置き換える</Note>。
         </div>
         <div className="mt-2">
-          33歳となった今、より重要な社会基盤へと <Note>成長</Note> 。
+          34歳となった今、より重要な社会基盤へと <Note>成長</Note> 。
         </div>
       </Contents>
       <img

@@ -98,7 +98,7 @@ export function WebIntro02() {
             src={CugnotAppleton.src}
             alt="CugnotAppleton"
           />
-          <div>255年前</div>
+          <div>256年前</div>
         </div>
       </Html>
       <OrbitControls />
@@ -197,7 +197,7 @@ export function WebIntro04() {
           }}
           transform
         >
-          <div style={{ lineHeight: "1.1" }}>もう少しで34年前 (33歳)</div>
+          <div style={{ lineHeight: "1.1" }}>35年前 (34歳)</div>
           <img className="mw-100" src={firstWebpage.src} alt="firstWebpage" />
         </Html>
       </Float>
